@@ -22,11 +22,13 @@ node('php'){
             }
         )
     }
+    
+    //Usuário do DockerHub
     stage('Docker Build') {
-        sh 'docker build -t jeffersonsouza/todoapi:$BUILD_NUMBER .'
+        sh 'docker build -t lgsouza12/todoapi:$BUILD_NUMBER .'
     }
     
     stage('Docker Ship') {
-        sh 'docker push jeffersonsouza/todoapi:$BUILD_NUMBER'
+        sh 'docker push lgsouza12/todoapi:$BUILD_NUMBER'
     }
 }
